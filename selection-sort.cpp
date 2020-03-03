@@ -20,7 +20,7 @@ void selectionSort(int A[], int n) {
 }
 
 
-void outputArray(int A[], int n) {
+void displayResult(int A[], int n) {
 
     for(int i = 0; i < n; i++) {
         printf("%d\n", A[i]);
@@ -38,7 +38,5 @@ int main() {
 
     selectionSort(arr, n);
     printf("Sorted array: \n");
-    outputArray(arr, n);
-
-
+    displayResult(arr, n);
 }

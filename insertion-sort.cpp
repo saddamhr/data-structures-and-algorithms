@@ -1,21 +1,20 @@
 #include <stdio.h>
 
-void bubbleSort(int A[], int n) {
+void insertionSort(int arr[], int n) {
 
-    int i, j, temp;
+    int i, j, item;
 
-    for(i = 0; i < n-1; i++) {
-        for(j = 0; j < n-i-1; j++) {
-            if(A[j] > A[j+1]) {
-                temp = A[j];
-                A[j] = A[j+1];
-                A[j+1] = temp;
-            }
+    for(i = 1; i < n; i++) {
+        item = arr[i];
+
+        j = i - 1;
+        while(j >= 0 && arr[j] > item) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
         }
+        arr[j + 1] = item;
     }
 }
-
-
 
 void displayResult(int A[], int n) {
 
@@ -35,7 +34,7 @@ int main() {
         scanf("%d", &arr[i]);
     }
 
-    bubbleSort(arr, n);
+    insertionSort(arr, n);
     printf("Sorted array: \n");
     displayResult(arr, n);
 }
